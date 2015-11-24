@@ -1,0 +1,581 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		689104F41BFFD26800F8A22F /* JSONProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689104F31BFFD26800F8A22F /* JSONProcessing.swift */; };
+		689104F71BFFDDEC00F8A22F /* FoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689104F61BFFDDEC00F8A22F /* FoundationExtensions.swift */; };
+		689104F91C00A21300F8A22F /* StarWarsUniverse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689104F81C00A21300F8A22F /* StarWarsUniverse.swift */; };
+		68F7880A1BFE5D2700A51030 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F788091BFE5D2700A51030 /* AppDelegate.swift */; };
+		68F7880C1BFE5D2700A51030 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F7880B1BFE5D2700A51030 /* ViewController.swift */; };
+		68F7880F1BFE5D2700A51030 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68F7880D1BFE5D2700A51030 /* Main.storyboard */; };
+		68F788111BFE5D2700A51030 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68F788101BFE5D2700A51030 /* Assets.xcassets */; };
+		68F788141BFE5D2700A51030 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68F788121BFE5D2700A51030 /* LaunchScreen.storyboard */; };
+		68F7881F1BFE5D2700A51030 /* StarWarsVIITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F7881E1BFE5D2700A51030 /* StarWarsVIITests.swift */; };
+		68F7882C1BFE605B00A51030 /* StarWarsCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F7882B1BFE605B00A51030 /* StarWarsCharacter.swift */; };
+		68F788301BFE7C5300A51030 /* Affiliations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F7882F1BFE7C5300A51030 /* Affiliations.swift */; };
+		68F788321BFE88A300A51030 /* ForceSensitive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F788311BFE88A300A51030 /* ForceSensitive.swift */; };
+		68F788521BFE903000A51030 /* c3po.caf in Resources */ = {isa = PBXBuildFile; fileRef = 68F788341BFE903000A51030 /* c3po.caf */; };
+		68F788531BFE903000A51030 /* c3po.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 68F788351BFE903000A51030 /* c3po.jpg */; };
+		68F788541BFE903000A51030 /* chewie.caf in Resources */ = {isa = PBXBuildFile; fileRef = 68F788361BFE903000A51030 /* chewie.caf */; };
+		68F788551BFE903000A51030 /* chewie.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 68F788371BFE903000A51030 /* chewie.jpg */; };
+		68F788561BFE903000A51030 /* forceSensitives.json in Resources */ = {isa = PBXBuildFile; fileRef = 68F788381BFE903000A51030 /* forceSensitives.json */; };
+		68F788571BFE903000A51030 /* greedo.caf in Resources */ = {isa = PBXBuildFile; fileRef = 68F788391BFE903000A51030 /* greedo.caf */; };
+		68F788581BFE903000A51030 /* greedo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 68F7883A1BFE903000A51030 /* greedo.jpg */; };
+		68F788591BFE903000A51030 /* jabba.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 68F7883B1BFE903000A51030 /* jabba.jpg */; };
+		68F7885A1BFE903000A51030 /* jabba.caf in Resources */ = {isa = PBXBuildFile; fileRef = 68F7883C1BFE903000A51030 /* jabba.caf */; };
+		68F7885B1BFE903000A51030 /* kylo.caf in Resources */ = {isa = PBXBuildFile; fileRef = 68F7883D1BFE903000A51030 /* kylo.caf */; };
+		68F7885C1BFE903000A51030 /* kylo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 68F7883E1BFE903000A51030 /* kylo.jpg */; };
+		68F7885D1BFE903000A51030 /* leia.caf in Resources */ = {isa = PBXBuildFile; fileRef = 68F7883F1BFE903000A51030 /* leia.caf */; };
+		68F7885E1BFE903000A51030 /* leia.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 68F788401BFE903000A51030 /* leia.jpg */; };
+		68F7885F1BFE903000A51030 /* luke.caf in Resources */ = {isa = PBXBuildFile; fileRef = 68F788411BFE903000A51030 /* luke.caf */; };
+		68F788601BFE903000A51030 /* luke.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 68F788421BFE903000A51030 /* luke.jpg */; };
+		68F788611BFE903000A51030 /* motti.caf in Resources */ = {isa = PBXBuildFile; fileRef = 68F788431BFE903000A51030 /* motti.caf */; };
+		68F788621BFE903000A51030 /* motti.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 68F788441BFE903000A51030 /* motti.jpg */; };
+		68F788631BFE903000A51030 /* obiwan.caf in Resources */ = {isa = PBXBuildFile; fileRef = 68F788451BFE903000A51030 /* obiwan.caf */; };
+		68F788641BFE903000A51030 /* obiwan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 68F788461BFE903000A51030 /* obiwan.jpg */; };
+		68F788651BFE903000A51030 /* palpatine.caf in Resources */ = {isa = PBXBuildFile; fileRef = 68F788471BFE903000A51030 /* palpatine.caf */; };
+		68F788661BFE903000A51030 /* palpatine.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 68F788481BFE903000A51030 /* palpatine.jpg */; };
+		68F788671BFE903000A51030 /* r2-d2.caf in Resources */ = {isa = PBXBuildFile; fileRef = 68F788491BFE903000A51030 /* r2-d2.caf */; };
+		68F788681BFE903000A51030 /* r2-d2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 68F7884A1BFE903000A51030 /* r2-d2.jpg */; };
+		68F788691BFE903000A51030 /* regularCharacters.json in Resources */ = {isa = PBXBuildFile; fileRef = 68F7884B1BFE903000A51030 /* regularCharacters.json */; };
+		68F7886A1BFE903000A51030 /* tarkin.caf in Resources */ = {isa = PBXBuildFile; fileRef = 68F7884C1BFE903000A51030 /* tarkin.caf */; };
+		68F7886B1BFE903000A51030 /* tarkin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 68F7884D1BFE903000A51030 /* tarkin.jpg */; };
+		68F7886C1BFE903000A51030 /* vader.caf in Resources */ = {isa = PBXBuildFile; fileRef = 68F7884E1BFE903000A51030 /* vader.caf */; };
+		68F7886D1BFE903000A51030 /* vader.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 68F7884F1BFE903000A51030 /* vader.jpg */; };
+		68F7886E1BFE903000A51030 /* yoda.caf in Resources */ = {isa = PBXBuildFile; fileRef = 68F788501BFE903000A51030 /* yoda.caf */; };
+		68F7886F1BFE903000A51030 /* yoda.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 68F788511BFE903000A51030 /* yoda.jpg */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		68F7881B1BFE5D2700A51030 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 68F787FE1BFE5D2700A51030 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 68F788051BFE5D2700A51030;
+			remoteInfo = StarWarsVII;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		689104F31BFFD26800F8A22F /* JSONProcessing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONProcessing.swift; sourceTree = "<group>"; };
+		689104F61BFFDDEC00F8A22F /* FoundationExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundationExtensions.swift; sourceTree = "<group>"; };
+		689104F81C00A21300F8A22F /* StarWarsUniverse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarWarsUniverse.swift; sourceTree = "<group>"; };
+		68F788061BFE5D2700A51030 /* StarWarsVII.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarWarsVII.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		68F788091BFE5D2700A51030 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		68F7880B1BFE5D2700A51030 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		68F7880E1BFE5D2700A51030 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		68F788101BFE5D2700A51030 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		68F788131BFE5D2700A51030 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		68F788151BFE5D2700A51030 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		68F7881A1BFE5D2700A51030 /* StarWarsVIITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StarWarsVIITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		68F7881E1BFE5D2700A51030 /* StarWarsVIITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsVIITests.swift; sourceTree = "<group>"; };
+		68F788201BFE5D2700A51030 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		68F7882B1BFE605B00A51030 /* StarWarsCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarWarsCharacter.swift; sourceTree = "<group>"; };
+		68F7882E1BFE65A800A51030 /* Misc.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Misc.playground; sourceTree = "<group>"; };
+		68F7882F1BFE7C5300A51030 /* Affiliations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Affiliations.swift; sourceTree = "<group>"; };
+		68F788311BFE88A300A51030 /* ForceSensitive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForceSensitive.swift; sourceTree = "<group>"; };
+		68F788341BFE903000A51030 /* c3po.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = c3po.caf; sourceTree = "<group>"; };
+		68F788351BFE903000A51030 /* c3po.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = c3po.jpg; sourceTree = "<group>"; };
+		68F788361BFE903000A51030 /* chewie.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = chewie.caf; sourceTree = "<group>"; };
+		68F788371BFE903000A51030 /* chewie.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chewie.jpg; sourceTree = "<group>"; };
+		68F788381BFE903000A51030 /* forceSensitives.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = forceSensitives.json; sourceTree = "<group>"; };
+		68F788391BFE903000A51030 /* greedo.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = greedo.caf; sourceTree = "<group>"; };
+		68F7883A1BFE903000A51030 /* greedo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = greedo.jpg; sourceTree = "<group>"; };
+		68F7883B1BFE903000A51030 /* jabba.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = jabba.jpg; sourceTree = "<group>"; };
+		68F7883C1BFE903000A51030 /* jabba.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = jabba.caf; sourceTree = "<group>"; };
+		68F7883D1BFE903000A51030 /* kylo.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = kylo.caf; sourceTree = "<group>"; };
+		68F7883E1BFE903000A51030 /* kylo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kylo.jpg; sourceTree = "<group>"; };
+		68F7883F1BFE903000A51030 /* leia.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = leia.caf; sourceTree = "<group>"; };
+		68F788401BFE903000A51030 /* leia.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = leia.jpg; sourceTree = "<group>"; };
+		68F788411BFE903000A51030 /* luke.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = luke.caf; sourceTree = "<group>"; };
+		68F788421BFE903000A51030 /* luke.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = luke.jpg; sourceTree = "<group>"; };
+		68F788431BFE903000A51030 /* motti.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = motti.caf; sourceTree = "<group>"; };
+		68F788441BFE903000A51030 /* motti.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = motti.jpg; sourceTree = "<group>"; };
+		68F788451BFE903000A51030 /* obiwan.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = obiwan.caf; sourceTree = "<group>"; };
+		68F788461BFE903000A51030 /* obiwan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = obiwan.jpg; sourceTree = "<group>"; };
+		68F788471BFE903000A51030 /* palpatine.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = palpatine.caf; sourceTree = "<group>"; };
+		68F788481BFE903000A51030 /* palpatine.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = palpatine.jpg; sourceTree = "<group>"; };
+		68F788491BFE903000A51030 /* r2-d2.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "r2-d2.caf"; sourceTree = "<group>"; };
+		68F7884A1BFE903000A51030 /* r2-d2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "r2-d2.jpg"; sourceTree = "<group>"; };
+		68F7884B1BFE903000A51030 /* regularCharacters.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = regularCharacters.json; sourceTree = "<group>"; };
+		68F7884C1BFE903000A51030 /* tarkin.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = tarkin.caf; sourceTree = "<group>"; };
+		68F7884D1BFE903000A51030 /* tarkin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tarkin.jpg; sourceTree = "<group>"; };
+		68F7884E1BFE903000A51030 /* vader.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = vader.caf; sourceTree = "<group>"; };
+		68F7884F1BFE903000A51030 /* vader.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = vader.jpg; sourceTree = "<group>"; };
+		68F788501BFE903000A51030 /* yoda.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = yoda.caf; sourceTree = "<group>"; };
+		68F788511BFE903000A51030 /* yoda.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yoda.jpg; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		68F788031BFE5D2700A51030 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		68F788171BFE5D2700A51030 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		689104F51BFFDDA800F8A22F /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				689104F61BFFDDEC00F8A22F /* FoundationExtensions.swift */,
+			);
+			name = Framework;
+			sourceTree = "<group>";
+		};
+		68F787FD1BFE5D2700A51030 = {
+			isa = PBXGroup;
+			children = (
+				68F788081BFE5D2700A51030 /* StarWarsVII */,
+				68F7881D1BFE5D2700A51030 /* StarWarsVIITests */,
+				68F788071BFE5D2700A51030 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		68F788071BFE5D2700A51030 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				68F788061BFE5D2700A51030 /* StarWarsVII.app */,
+				68F7881A1BFE5D2700A51030 /* StarWarsVIITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		68F788081BFE5D2700A51030 /* StarWarsVII */ = {
+			isa = PBXGroup;
+			children = (
+				689104F51BFFDDA800F8A22F /* Framework */,
+				68F788291BFE5DEF00A51030 /* App */,
+			);
+			path = StarWarsVII;
+			sourceTree = "<group>";
+		};
+		68F7881D1BFE5D2700A51030 /* StarWarsVIITests */ = {
+			isa = PBXGroup;
+			children = (
+				68F7881E1BFE5D2700A51030 /* StarWarsVIITests.swift */,
+				68F788201BFE5D2700A51030 /* Info.plist */,
+			);
+			path = StarWarsVIITests;
+			sourceTree = "<group>";
+		};
+		68F788291BFE5DEF00A51030 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				68F788331BFE900F00A51030 /* Resources */,
+				68F7882E1BFE65A800A51030 /* Misc.playground */,
+				68F7882A1BFE601400A51030 /* Model */,
+				68F788091BFE5D2700A51030 /* AppDelegate.swift */,
+				68F7880B1BFE5D2700A51030 /* ViewController.swift */,
+				68F7880D1BFE5D2700A51030 /* Main.storyboard */,
+				68F788101BFE5D2700A51030 /* Assets.xcassets */,
+				68F788121BFE5D2700A51030 /* LaunchScreen.storyboard */,
+				68F788151BFE5D2700A51030 /* Info.plist */,
+			);
+			name = App;
+			sourceTree = "<group>";
+		};
+		68F7882A1BFE601400A51030 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				68F7882B1BFE605B00A51030 /* StarWarsCharacter.swift */,
+				68F7882F1BFE7C5300A51030 /* Affiliations.swift */,
+				68F788311BFE88A300A51030 /* ForceSensitive.swift */,
+				689104F31BFFD26800F8A22F /* JSONProcessing.swift */,
+				689104F81C00A21300F8A22F /* StarWarsUniverse.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		68F788331BFE900F00A51030 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				68F788341BFE903000A51030 /* c3po.caf */,
+				68F788351BFE903000A51030 /* c3po.jpg */,
+				68F788361BFE903000A51030 /* chewie.caf */,
+				68F788371BFE903000A51030 /* chewie.jpg */,
+				68F788381BFE903000A51030 /* forceSensitives.json */,
+				68F788391BFE903000A51030 /* greedo.caf */,
+				68F7883A1BFE903000A51030 /* greedo.jpg */,
+				68F7883B1BFE903000A51030 /* jabba.jpg */,
+				68F7883C1BFE903000A51030 /* jabba.caf */,
+				68F7883D1BFE903000A51030 /* kylo.caf */,
+				68F7883E1BFE903000A51030 /* kylo.jpg */,
+				68F7883F1BFE903000A51030 /* leia.caf */,
+				68F788401BFE903000A51030 /* leia.jpg */,
+				68F788411BFE903000A51030 /* luke.caf */,
+				68F788421BFE903000A51030 /* luke.jpg */,
+				68F788431BFE903000A51030 /* motti.caf */,
+				68F788441BFE903000A51030 /* motti.jpg */,
+				68F788451BFE903000A51030 /* obiwan.caf */,
+				68F788461BFE903000A51030 /* obiwan.jpg */,
+				68F788471BFE903000A51030 /* palpatine.caf */,
+				68F788481BFE903000A51030 /* palpatine.jpg */,
+				68F788491BFE903000A51030 /* r2-d2.caf */,
+				68F7884A1BFE903000A51030 /* r2-d2.jpg */,
+				68F7884B1BFE903000A51030 /* regularCharacters.json */,
+				68F7884C1BFE903000A51030 /* tarkin.caf */,
+				68F7884D1BFE903000A51030 /* tarkin.jpg */,
+				68F7884E1BFE903000A51030 /* vader.caf */,
+				68F7884F1BFE903000A51030 /* vader.jpg */,
+				68F788501BFE903000A51030 /* yoda.caf */,
+				68F788511BFE903000A51030 /* yoda.jpg */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		68F788051BFE5D2700A51030 /* StarWarsVII */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 68F788231BFE5D2700A51030 /* Build configuration list for PBXNativeTarget "StarWarsVII" */;
+			buildPhases = (
+				68F788021BFE5D2700A51030 /* Sources */,
+				68F788031BFE5D2700A51030 /* Frameworks */,
+				68F788041BFE5D2700A51030 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StarWarsVII;
+			productName = StarWarsVII;
+			productReference = 68F788061BFE5D2700A51030 /* StarWarsVII.app */;
+			productType = "com.apple.product-type.application";
+		};
+		68F788191BFE5D2700A51030 /* StarWarsVIITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 68F788261BFE5D2700A51030 /* Build configuration list for PBXNativeTarget "StarWarsVIITests" */;
+			buildPhases = (
+				68F788161BFE5D2700A51030 /* Sources */,
+				68F788171BFE5D2700A51030 /* Frameworks */,
+				68F788181BFE5D2700A51030 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				68F7881C1BFE5D2700A51030 /* PBXTargetDependency */,
+			);
+			name = StarWarsVIITests;
+			productName = StarWarsVIITests;
+			productReference = 68F7881A1BFE5D2700A51030 /* StarWarsVIITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		68F787FE1BFE5D2700A51030 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Jorge Miguel Lucena Pino";
+				TargetAttributes = {
+					68F788051BFE5D2700A51030 = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+					68F788191BFE5D2700A51030 = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = 68F788051BFE5D2700A51030;
+					};
+				};
+			};
+			buildConfigurationList = 68F788011BFE5D2700A51030 /* Build configuration list for PBXProject "StarWarsVII" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 68F787FD1BFE5D2700A51030;
+			productRefGroup = 68F788071BFE5D2700A51030 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				68F788051BFE5D2700A51030 /* StarWarsVII */,
+				68F788191BFE5D2700A51030 /* StarWarsVIITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		68F788041BFE5D2700A51030 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68F7886D1BFE903000A51030 /* vader.jpg in Resources */,
+				68F7886F1BFE903000A51030 /* yoda.jpg in Resources */,
+				68F788561BFE903000A51030 /* forceSensitives.json in Resources */,
+				68F788141BFE5D2700A51030 /* LaunchScreen.storyboard in Resources */,
+				68F788661BFE903000A51030 /* palpatine.jpg in Resources */,
+				68F7886A1BFE903000A51030 /* tarkin.caf in Resources */,
+				68F7885E1BFE903000A51030 /* leia.jpg in Resources */,
+				68F788611BFE903000A51030 /* motti.caf in Resources */,
+				68F788681BFE903000A51030 /* r2-d2.jpg in Resources */,
+				68F7886B1BFE903000A51030 /* tarkin.jpg in Resources */,
+				68F7885C1BFE903000A51030 /* kylo.jpg in Resources */,
+				68F788601BFE903000A51030 /* luke.jpg in Resources */,
+				68F7885D1BFE903000A51030 /* leia.caf in Resources */,
+				68F788591BFE903000A51030 /* jabba.jpg in Resources */,
+				68F7886E1BFE903000A51030 /* yoda.caf in Resources */,
+				68F788531BFE903000A51030 /* c3po.jpg in Resources */,
+				68F788631BFE903000A51030 /* obiwan.caf in Resources */,
+				68F788521BFE903000A51030 /* c3po.caf in Resources */,
+				68F788641BFE903000A51030 /* obiwan.jpg in Resources */,
+				68F788541BFE903000A51030 /* chewie.caf in Resources */,
+				68F7885B1BFE903000A51030 /* kylo.caf in Resources */,
+				68F788691BFE903000A51030 /* regularCharacters.json in Resources */,
+				68F788651BFE903000A51030 /* palpatine.caf in Resources */,
+				68F788581BFE903000A51030 /* greedo.jpg in Resources */,
+				68F788671BFE903000A51030 /* r2-d2.caf in Resources */,
+				68F788621BFE903000A51030 /* motti.jpg in Resources */,
+				68F788571BFE903000A51030 /* greedo.caf in Resources */,
+				68F788551BFE903000A51030 /* chewie.jpg in Resources */,
+				68F7886C1BFE903000A51030 /* vader.caf in Resources */,
+				68F7885A1BFE903000A51030 /* jabba.caf in Resources */,
+				68F7885F1BFE903000A51030 /* luke.caf in Resources */,
+				68F788111BFE5D2700A51030 /* Assets.xcassets in Resources */,
+				68F7880F1BFE5D2700A51030 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		68F788181BFE5D2700A51030 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		68F788021BFE5D2700A51030 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				689104F71BFFDDEC00F8A22F /* FoundationExtensions.swift in Sources */,
+				689104F91C00A21300F8A22F /* StarWarsUniverse.swift in Sources */,
+				689104F41BFFD26800F8A22F /* JSONProcessing.swift in Sources */,
+				68F7880C1BFE5D2700A51030 /* ViewController.swift in Sources */,
+				68F7882C1BFE605B00A51030 /* StarWarsCharacter.swift in Sources */,
+				68F788301BFE7C5300A51030 /* Affiliations.swift in Sources */,
+				68F788321BFE88A300A51030 /* ForceSensitive.swift in Sources */,
+				68F7880A1BFE5D2700A51030 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		68F788161BFE5D2700A51030 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68F7881F1BFE5D2700A51030 /* StarWarsVIITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		68F7881C1BFE5D2700A51030 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 68F788051BFE5D2700A51030 /* StarWarsVII */;
+			targetProxy = 68F7881B1BFE5D2700A51030 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		68F7880D1BFE5D2700A51030 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				68F7880E1BFE5D2700A51030 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		68F788121BFE5D2700A51030 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				68F788131BFE5D2700A51030 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		68F788211BFE5D2700A51030 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		68F788221BFE5D2700A51030 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		68F788241BFE5D2700A51030 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = StarWarsVII/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jf.StarWarsVII;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		68F788251BFE5D2700A51030 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = StarWarsVII/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jf.StarWarsVII;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		68F788271BFE5D2700A51030 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = StarWarsVIITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jf.StarWarsVIITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StarWarsVII.app/StarWarsVII";
+			};
+			name = Debug;
+		};
+		68F788281BFE5D2700A51030 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = StarWarsVIITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jf.StarWarsVIITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StarWarsVII.app/StarWarsVII";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		68F788011BFE5D2700A51030 /* Build configuration list for PBXProject "StarWarsVII" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				68F788211BFE5D2700A51030 /* Debug */,
+				68F788221BFE5D2700A51030 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		68F788231BFE5D2700A51030 /* Build configuration list for PBXNativeTarget "StarWarsVII" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				68F788241BFE5D2700A51030 /* Debug */,
+				68F788251BFE5D2700A51030 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		68F788261BFE5D2700A51030 /* Build configuration list for PBXNativeTarget "StarWarsVIITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				68F788271BFE5D2700A51030 /* Debug */,
+				68F788281BFE5D2700A51030 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 68F787FE1BFE5D2700A51030 /* Project object */;
+}
