@@ -125,5 +125,66 @@ print(talvezInt)
 //let porCojonesInt = cosa as! Int
 
 
+//: Subscripts - Funciones con sintaxis de indexado
+class Numbers{
+    
+    let evens = [2,4,6,8]
+    let odds  = [1,3,5,7,9]
+    
+    // Subscripts para acceder a números mediante índice
+    // Usamos un nombre externo para distinguir los tipos de números
+    
+    subscript(evenAtIndex idx: Int) -> Int{
+        get{
+            return evens[idx]
+        }
+    }
+    
+    subscript(oddAtIndex idx: Int) -> Int{
+        get{
+            return odds[idx]
+        }
+    }
+}
+
+
+// Un subscript puede tener más de un parámetro
+
+class Matrix{
+    
+    subscript(row:Int, column:Int)->Int{
+        get{
+            // haz lo que sea
+            return 42
+        }
+        set{
+            // haz lo que sea con newValue
+            
+        }
+    }
+}
+
+let nero = Matrix()
+nero[3,4]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
