@@ -49,8 +49,26 @@ enum JSONProcessingError : ErrorType{
     case WrongJSONFormat
 }
 
+//MARK - Structs
+struct StrictStarWarsCharacter{
+    
+    let firstName   : String?
+    let lastName    : String?
+    let alias       : String?
+    let photo       : UIImage
+    let url         : NSURL
+    let affiliation : StarWarsAffiliation
+    let soundData   : NSData
+}
+
+struct StrictForceSensitive {
+    
+    let character: StrictStarWarsCharacter
+    let midichlorians: Int
+}
+
 //MARK: - Decoding
-func decode(starWarsCharacter json: JSONDictionary) throws -> StarWarsCharacterPack{
+func decode(starWarsCharacter json: JSONDictionary) throws -> StrictStarWarsCharacter{
     
     // Nos metemos en el mundo imaginario de Yupi donde todo funciona y nada es nil
     guard let urlString = json[JSONKeys.url.rawValue] as? String,
@@ -83,19 +101,17 @@ func decode(starWarsCharacter json: JSONDictionary) throws -> StarWarsCharacterP
     let affiliation = StarWarsAffiliation.byName(affiliationName)
     
     // Joé pues crear el StarWarsCharacter
-    return (firstName: firstName,
+    return StrictStarWarsCharacter(firstName: firstName,
         lastName: lastName,
         alias: alias,
-        soundData: soundData,
         photo: image,
         url: url,
-        affiliation: affiliation)
+        affiliation: affiliation,
+        soundData: soundData)
 }
 
 
-// Deberes para el finde
-
-func decode(forceSensitive json: JSONDictionary) throws -> ForceSensitivePack{
+func decode(forceSensitive json: JSONDictionary) throws -> StrictForceSensitive{
     
     
     
@@ -104,19 +120,9 @@ func decode(forceSensitive json: JSONDictionary) throws -> ForceSensitivePack{
             throw JSONProcessingError.WrongJSONFormat
     }
 
-    return (starWarsCharacter: try decode(starWarsCharacter: json), midichlorians: midichlorians)
+    return StrictForceSensitive(character: try decode(starWarsCharacter: json), midichlorians: midichlorians)
     
 }
-
-// Deberes avanzados:
-// 1) Cambiar el tipo de retorno de decode
-// 2) usar una tupla o (para los valientes) una struct
-
-// pa los más valientes y chulos
-// crear una clase de StarWarsUniverse
-
-
-
 
 
 
