@@ -38,8 +38,8 @@ typealias JSONDictionary    = [String:JSONObject]
 typealias JSONArray         = [JSONDictionary]
 
 //MARK: - Packs
-typealias StarWarsCharacterPack = (firstName: String?, lastName: String?, alias: String?, photo: UIImage, url: NSURL, affiliation: StarWarsAffiliation, soundData: NSData)
-typealias ForceSensitivePack = (starWarsCharacter: StarWarsCharacterPack, midichlorians: Int)
+//typealias StarWarsCharacterPack = (firstName: String?, lastName: String?, alias: String?, photo: UIImage, url: NSURL, affiliation: StarWarsAffiliation, soundData: NSData)
+//typealias ForceSensitivePack = (starWarsCharacter: StarWarsCharacterPack, midichlorians: Int)
 
 //MARK: - Errors
 enum JSONProcessingError : ErrorType{
@@ -113,8 +113,6 @@ func decode(starWarsCharacter json: JSONDictionary) throws -> StrictStarWarsChar
 
 func decode(forceSensitive json: JSONDictionary) throws -> StrictForceSensitive{
     
-    
-    
     guard let midichlorians = json[JSONKeys.midichlorians.rawValue] as? Int
         else{
             throw JSONProcessingError.WrongJSONFormat
@@ -125,7 +123,18 @@ func decode(forceSensitive json: JSONDictionary) throws -> StrictForceSensitive{
 }
 
 
-
+func decode(starWarsCharacters json: JSONArray) throws -> [StrictStarWarsCharacter]{
+    
+    // Inicializamos
+    var result = Array<StrictStarWarsCharacter>()
+    
+    // Recorremos todos los personajes y los vamos guardando en el array
+    for each in json {
+        result.append(try decode(starWarsCharacter: each))
+    }
+    
+    return result
+}
 
 
 
