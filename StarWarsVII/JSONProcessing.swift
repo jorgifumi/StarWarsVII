@@ -38,8 +38,8 @@ typealias JSONDictionary    = [String:JSONObject]
 typealias JSONArray         = [JSONDictionary]
 
 //MARK: - Packs
-typealias StarWarsCharacterPack = (firstName: String?, lastName: String?, alias: String?, photo: UIImage, url: NSURL, affiliation: StarWarsAffiliation, soundData: NSData)
-typealias ForceSensitivePack = (starWarsCharacter: StarWarsCharacterPack, midichlorians: Int)
+//typealias StarWarsCharacterPack = (firstName: String?, lastName: String?, alias: String?, photo: UIImage, url: NSURL, affiliation: StarWarsAffiliation, soundData: NSData)
+//typealias ForceSensitivePack = (starWarsCharacter: StarWarsCharacterPack, midichlorians: Int)
 
 //MARK: - Errors
 enum JSONProcessingError : ErrorType{
@@ -68,6 +68,7 @@ struct StrictForceSensitive {
 }
 
 //MARK: - Decoding
+
 func decode(starWarsCharacter json: JSONDictionary) throws -> StrictStarWarsCharacter{
     
     // Nos metemos en el mundo imaginario de Yupi donde todo funciona y nada es nil
@@ -113,8 +114,6 @@ func decode(starWarsCharacter json: JSONDictionary) throws -> StrictStarWarsChar
 
 func decode(forceSensitive json: JSONDictionary) throws -> StrictForceSensitive{
     
-    
-    
     guard let midichlorians = json[JSONKeys.midichlorians.rawValue] as? Int
         else{
             throw JSONProcessingError.WrongJSONFormat
@@ -125,8 +124,39 @@ func decode(forceSensitive json: JSONDictionary) throws -> StrictForceSensitive{
 }
 
 
+func decode(starWarsCharacters json: JSONArray) -> [StrictStarWarsCharacter]{
+    
+    // Inicializamos
+    var result = Array<StrictStarWarsCharacter>()
+    
+    do{
+        // Recorremos todos los personajes y los vamos guardando en el array
+        for each in json {
+            result.append(try decode(starWarsCharacter: each))
+        }
+    }catch{
+        fatalError("Ahora sí que la has cagado")
+    }
+    // Devuelvo el array
+    return result
+}
 
+//MARK: - Initialization
 
+extension StarWarsCharacter{
+    // Un init que acepta los parámetros empaquetados en un StrictStarWarsCharacter
+    
+    convenience init(strictStarWarsCharacter c: StrictStarWarsCharacter){
+        self.init(firstName: c.firstName,
+            lastName: c.lastName,
+            alias: c.alias,
+            soundData: c.soundData,
+            photo: c.photo,
+            url: c.url,
+            affiliation: c.affiliation)
+    }
+}
 
-
-
+extension StarWarsUniverse{
+    
+}

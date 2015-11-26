@@ -57,6 +57,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print(vader)
         }
         
+        // Probar parseado de JSON e inicialización de objetos del modelo
+        
+        do{
+            if let url = NSBundle.mainBundle().URLForResource("regularCharacters.json"),
+                data = NSData(contentsOfURL: url),
+                characters = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments) as? JSONArray{
+                    
+                    // Ver un JSONObjet que este dentro del JSONArray
+                    let jabbaJSON = characters[4]
+                    do{
+                        let strictJabba = try decode(starWarsCharacter: jabbaJSON)
+                        let jabba = StarWarsCharacter(strictStarWarsCharacter: strictJabba)
+                        print("El vestido más bonito de Leia, se lo regaló \(jabba)")
+
+                    }catch{
+                        print("La cagamos al extraer a Jabba")
+                    }
+                    
+                    // Crear mi universo de Star Wars a partir del array que ya tengo
+                    let strictChars = decode(starWarsCharacters: characters)
+                    print(strictChars)
+                    
+                    
+//                    let u = StarWarsUniverse(arrayOfCharacters: strictChars)
+//                    print(u)
+                }
+        }catch{
+            print("La cagamosal parsear el JSON")
+        }
+        
     }
 
 }
