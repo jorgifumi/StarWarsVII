@@ -12,12 +12,33 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
+    var model : StarWarsUniverse?
+    var sb : UIStoryboard?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        tddPaPobres()
+        // Arranco la App a manubrio
+        // Preparo el modelo
+        do{
+            if let url = NSBundle.mainBundle().URLForResource("regularCharacters.json"),
+                data = NSData(contentsOfURL: url),
+                jsons = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments) as? JSONArray{
+                    model = StarWarsUniverse(characters: decode(starWarsCharacters: jsons))
+            }
+        }catch{
+            fatalError("El modelo se fue al carajo")
+        }
+        
+        // Crear la interfaz gráfica (El Storyboard)
+        sb = UIStoryboard(name: "EpisodeVII", bundle: nil)
+        
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        window?.rootViewController = sb?.instantiateInitialViewController()
+        window?.makeKeyAndVisible()
+        
+        //tddPaPobres()
         
         return true
     }
