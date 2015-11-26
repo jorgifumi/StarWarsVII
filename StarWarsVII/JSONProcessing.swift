@@ -158,5 +158,18 @@ extension StarWarsCharacter{
 }
 
 extension StarWarsUniverse{
+    // Init de conveniencia
     
+    convenience init(characters cs: [StrictStarWarsCharacter]){
+        // Patearse el array
+        var chars = [StarWarsCharacter]()
+        for each in cs{
+            // Pa cada uno que encuentre lo transformo en un personaje
+            let c = StarWarsCharacter(strictStarWarsCharacter: each)
+            // Lo encasqueto en un array
+            chars.append(c)
+        }
+        // Le paso el array y el marron a mi init designado (Paco)
+        self.init(arrayOfCharacters: chars)
+    }
 }

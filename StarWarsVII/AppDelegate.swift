@@ -77,11 +77,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     
                     // Crear mi universo de Star Wars a partir del array que ya tengo
                     let strictChars = decode(starWarsCharacters: characters)
-                    print(strictChars)
                     
-                    
-//                    let u = StarWarsUniverse(arrayOfCharacters: strictChars)
-//                    print(u)
+                    let u = StarWarsUniverse(characters: strictChars)
+                    print(u)
                 }
         }catch{
             print("La cagamosal parsear el JSON")

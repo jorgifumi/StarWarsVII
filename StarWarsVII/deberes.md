@@ -1,4 +1,4 @@
 # Deberes
 
-* Crear una función decode(JSONArray)->[StrictStarWarsCharacter]
-* Probarla con el JSON correspondiente (Personajes "normales")
+* Implementar map en vez de for al recorrer arrays
+* Buscar en la documentacion ( El libro) la palabra clave rethrows y aplicarla a: decode(starWarsCharacters..)
