@@ -68,6 +68,7 @@ struct StrictForceSensitive {
 }
 
 //MARK: - Decoding
+
 func decode(starWarsCharacter json: JSONDictionary) throws -> StrictStarWarsCharacter{
     
     // Nos metemos en el mundo imaginario de Yupi donde todo funciona y nada es nil
@@ -123,19 +124,39 @@ func decode(forceSensitive json: JSONDictionary) throws -> StrictForceSensitive{
 }
 
 
-func decode(starWarsCharacters json: JSONArray) throws -> [StrictStarWarsCharacter]{
+func decode(starWarsCharacters json: JSONArray) -> [StrictStarWarsCharacter]{
     
     // Inicializamos
     var result = Array<StrictStarWarsCharacter>()
     
-    // Recorremos todos los personajes y los vamos guardando en el array
-    for each in json {
-        result.append(try decode(starWarsCharacter: each))
+    do{
+        // Recorremos todos los personajes y los vamos guardando en el array
+        for each in json {
+            result.append(try decode(starWarsCharacter: each))
+        }
+    }catch{
+        fatalError("Ahora sí que la has cagado")
     }
-    
+    // Devuelvo el array
     return result
 }
 
+//MARK: - Initialization
 
+extension StarWarsCharacter{
+    // Un init que acepta los parámetros empaquetados en un StrictStarWarsCharacter
+    
+    convenience init(strictStarWarsCharacter c: StrictStarWarsCharacter){
+        self.init(firstName: c.firstName,
+            lastName: c.lastName,
+            alias: c.alias,
+            soundData: c.soundData,
+            photo: c.photo,
+            url: c.url,
+            affiliation: c.affiliation)
+    }
+}
 
-
+extension StarWarsUniverse{
+    
+}
