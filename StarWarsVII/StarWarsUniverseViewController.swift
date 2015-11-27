@@ -10,12 +10,24 @@ import UIKit
 
 class StarWarsUniverseViewController: UITableViewController {
 
-    // Función que extrae el JSON de personajes mindunguis y devuelve un [Array de su representación estricta
-//    private func decodeJSON() -> [StrictStarWarsCharacter]{
-//        // Escribe tú esta función
-//    }
+    
+    // Función que extrae el JSON de personajes mindunguis y devuelve un Array de su representación estricta
+    private func decodeJSON() -> [StrictStarWarsCharacter]{
+        // Preparo el modelo
+        var decoded = [StrictStarWarsCharacter]()
+        do{
+            if let url = NSBundle.mainBundle().URLForResource("regularCharacters.json"),
+                data = NSData(contentsOfURL: url),
+                jsons = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments) as? JSONArray{
+                    decoded = decode(starWarsCharacters: jsons)
+            }
+        }catch{
+            fatalError("El modelo se fue al carajo")
+        }
+        return decoded
+    }
     // Un let al modelo y ya le definimos el valor por defecto (uséase, lo inicializas)
-//    let mode : StarWarsUniverse = StarWarsUniverse(characters: decodeJSON())
+    let model : StarWarsUniverse //= StarWarsUniverse(arrayOfStrictSWCharacters: decodeJSON())
     
     override func viewDidLoad() {
         super.viewDidLoad()

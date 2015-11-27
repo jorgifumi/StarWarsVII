@@ -34,6 +34,7 @@ class StarWarsUniverse{
         for each in StarWarsAffiliation.cases(){
             characters[each] = Array<StarWarsCharacter>()
         }
+//        StarWarsAffiliation.cases().map({characters[$0] = Array<StarWarsCharacter>()})
         // Patearse los personajes, y según su afiliación, los metemos en un sitio o en otro
         for character in arrayOfCharacters{
             
@@ -42,6 +43,9 @@ class StarWarsUniverse{
             let aff = character.affiliation
             characters[aff]?.append(character)
         }
+        
+        // Hacer lo mismo con map
+        
         
     }
     
@@ -54,9 +58,13 @@ class StarWarsUniverse{
             // Patearse el diccionario e ir sumando la cantidad de personajes en cada uno
             var total = 0
             for affiliation in StarWarsAffiliation.cases(){
-                total = total + countCharacters(affiliation)
+                total += countCharacters(affiliation)
+                // Lo mismo con map:
+                //total = StarWarsAffiliation.cases().map({total + countCharacters($0)})
             }
             return total
+            
+            
         }
     }
     

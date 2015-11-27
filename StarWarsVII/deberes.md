@@ -5,7 +5,7 @@
 * Crear VC rojo y conectarlo con otro segue
 
 * Crear el modelo en StarWarsUniverseVC
-* Crear una propiedd para mantenerlo
+* Crear una propiedad para mantenerlo
 * Usarlo para responder a los mensajes de la tabla
 * Extra: crear el controlador de personaje e implementar el método de didSelect....
 

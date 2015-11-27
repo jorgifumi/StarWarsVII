@@ -160,7 +160,7 @@ extension StarWarsCharacter{
 extension StarWarsUniverse{
     // Init de conveniencia
     
-    convenience init(characters cs: [StrictStarWarsCharacter]){
+    convenience init(arrayOfStrictSWCharacters cs: [StrictStarWarsCharacter]){
         // Patearse el array
         var chars = [StarWarsCharacter]()
         for each in cs{

@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if let url = NSBundle.mainBundle().URLForResource("regularCharacters.json"),
                 data = NSData(contentsOfURL: url),
                 jsons = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments) as? JSONArray{
-                    model = StarWarsUniverse(characters: decode(starWarsCharacters: jsons))
+                    model = StarWarsUniverse(arrayOfStrictSWCharacters: decode(starWarsCharacters: jsons))
             }
         }catch{
             fatalError("El modelo se fue al carajo")
@@ -99,7 +99,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     // Crear mi universo de Star Wars a partir del array que ya tengo
                     let strictChars = decode(starWarsCharacters: characters)
                     
-                    let u = StarWarsUniverse(characters: strictChars)
+                    let u = StarWarsUniverse(arrayOfStrictSWCharacters: strictChars)
                     print(u)
                 }
         }catch{
