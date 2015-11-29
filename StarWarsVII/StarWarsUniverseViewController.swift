@@ -11,23 +11,8 @@ import UIKit
 class StarWarsUniverseViewController: UITableViewController {
 
     
-    // Función que extrae el JSON de personajes mindunguis y devuelve un Array de su representación estricta
-    private func decodeJSON() -> [StrictStarWarsCharacter]{
-        // Preparo el modelo
-        var decoded = [StrictStarWarsCharacter]()
-        do{
-            if let url = NSBundle.mainBundle().URLForResource("regularCharacters.json"),
-                data = NSData(contentsOfURL: url),
-                jsons = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments) as? JSONArray{
-                    decoded = decode(starWarsCharacters: jsons)
-            }
-        }catch{
-            fatalError("El modelo se fue al carajo")
-        }
-        return decoded
-    }
-    // Un let al modelo y ya le definimos el valor por defecto (uséase, lo inicializas)
-    let model : StarWarsUniverse //= StarWarsUniverse(arrayOfStrictSWCharacters: decodeJSON())
+    
+    let model : StarWarsUniverse = StarWarsUniverse(arrayOfStrictSWCharacters: decodeJSON())
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,24 +34,38 @@ class StarWarsUniverseViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        // Devuelve el número de secciones
+        print(model.countAffiliations)
+        return model.countAffiliations
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        // Recibe una tabla y el número de sección y devuelve el número de filas en esa sección
+        let aff = StarWarsAffiliation.byName(model.affiliationName(section))
+        print("rows: \(model.countCharacters(aff))")
+        return model.countCharacters(aff)
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
+        let cell = tableView.dequeueReusableCellWithIdentifier("StarWarsCharacterId", forIndexPath: indexPath)
+        
         // Configure the cell...
+        if let alias = model[indexPath.row, inAffiliation: StarWarsAffiliation.byName(model.affiliationName(indexPath.section))]?.alias {
+            cell.textLabel?.text = alias
+            cell.detailTextLabel?.text = model[indexPath.row, inAffiliation: StarWarsAffiliation.byName(model.affiliationName(indexPath.section))]?.name
+            
 
+        }else{
+            cell.textLabel?.text = model[indexPath.row, inAffiliation: StarWarsAffiliation.byName(model.affiliationName(indexPath.section))]?.name
+        }
+        
         return cell
     }
-    */
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return model.affiliationName(section)
+    }
 
     /*
     // Override to support conditional editing of the table view.

@@ -141,6 +141,22 @@ func decode(starWarsCharacters json: JSONArray) -> [StrictStarWarsCharacter]{
     return result
 }
 
+// Función que extrae el JSON de personajes mindunguis y devuelve un Array de su representación estricta
+func decodeJSON() -> [StrictStarWarsCharacter]{
+    // Preparo el modelo
+    var decoded = [StrictStarWarsCharacter]()
+    do{
+        if let url = NSBundle.mainBundle().URLForResource("regularCharacters.json"),
+            data = NSData(contentsOfURL: url),
+            jsons = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments) as? JSONArray{
+                decoded = decode(starWarsCharacters: jsons)
+        }
+    }catch{
+        fatalError("El modelo se fue al carajo")
+    }
+    return decoded
+}
+
 //MARK: - Initialization
 
 extension StarWarsCharacter{

@@ -9,14 +9,6 @@
 import UIKit
 
 
-// Carta a los Reyes Magos
-
-
-
-
-
-
-
 class StarWarsUniverse{
     
     //MARK: - Private interface

@@ -37,7 +37,7 @@ enum StarWarsAffiliation{
             name = "Rebel Alliance"
             
         case .JabbaCriminalEmpire:
-            name = "Jabba Criminal Empire"
+            name = "Jabba's Criminal Empire"
             
         case .FirstOrder:
             name = "First Order"
@@ -50,7 +50,7 @@ enum StarWarsAffiliation{
 
     }
     
-    static func byName(name: String) ->StarWarsAffiliation{
+    static func byName(name: String) -> StarWarsAffiliation{
         
         let aff : StarWarsAffiliation
         
