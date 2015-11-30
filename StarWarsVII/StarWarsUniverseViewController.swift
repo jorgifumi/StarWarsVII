@@ -9,17 +9,44 @@
 import UIKit
 
 class StarWarsUniverseViewController: UITableViewController {
-
+    
+    
+    var model : StarWarsUniverse?
     // Función que extrae el JSON de personajes mindunguis y devuelve un [Array de su representación estricta
-//    private func decodeJSON() -> [StrictStarWarsCharacter]{
-//        // Escribe tú esta función
-//    }
-    // Un let al modelo y ya le definimos el valor por defecto (uséase, lo inicializas)
-//    let mode : StarWarsUniverse = StarWarsUniverse(characters: decodeJSON())
+    private func decodeJSON() -> [StrictStarWarsCharacter]?{
+        
+        var result : [StrictStarWarsCharacter]? = nil
+        // Obtener la url del fichero (puede salir mal)
+        do{
+            if let url = NSBundle.mainBundle().URLForResource("regularCharacters.json"),
+                // Leemos el fichero JSON a un NSDATA (puede salir mal)
+                data = NSData(contentsOfURL: url),
+                // Lo parseamos
+                charsArray = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments) as? JSONArray{
+                    
+                    // Todo es fabuloso!!!
+                    result = decode(starWarsCharacters: charsArray)
+                    
+            }
+        }catch{
+            // Error al parsear el JSON
+            print("La cagamos, en vez de un JSON, me mandaron un camisón del Dávalos")
+        }
+        
+        return result
+        
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Creamos nuestro modelo
+        if let chars = decodeJSON(){
+            model = StarWarsUniverse(characters: chars)
+        }else{
+            fatalError("Se jodió el invento, no hubo forma de parsear los personajes")
+        }
         
 
         // Uncomment the following line to preserve selection between presentations
