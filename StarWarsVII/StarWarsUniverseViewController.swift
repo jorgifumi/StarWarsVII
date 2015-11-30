@@ -65,6 +65,11 @@ class StarWarsUniverseViewController: UITableViewController {
         return model.affiliationName(section)
     }
 
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        self.performSegueWithIdentifier("DetailSWCharacter", sender: model[indexPath.row, inAffiliation: StarWarsAffiliation.byName(model.affiliationName(indexPath.section))])
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -100,14 +105,25 @@ class StarWarsUniverseViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
+    /*
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "DetailSWCharacter"){
         // Get the new view controller using segue.destinationViewController.
+            //var model = sender as? StarWarsCharacter
+            
         // Pass the selected object to the new view controller.
+            //var detailVC : StarWarsCharacterViewController = (segue.destinationViewController as? StarWarsCharacterViewController)!
+            //detailVC.model = model
+        }
     }
     */
+        
+    // MARK: - Delegate
+    
+    
 
 }

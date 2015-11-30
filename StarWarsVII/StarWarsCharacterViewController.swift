@@ -9,6 +9,13 @@
 import UIKit
 
 class StarWarsCharacterViewController: UIViewController {
+    
+    
+    
+    
+//    convenience init (char: StarWarsCharacter) {
+//        var model : StarWarsCharacter = char
+//    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
