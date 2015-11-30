@@ -64,24 +64,43 @@ class StarWarsUniverseViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return (model?.countAffiliations)!
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        let aff = StarWarsAffiliation.byRawValue(section)
+        return model!.countCharacters(aff)
+//        let aff = StarWarsAffiliation.byName(model!.affiliationName(section))
+//        
+//        return model!.countCharacters(aff)
+    }
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        return model?.affiliationName(section)
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cellID = "StarWarsCell"
+        var cell = tableView.dequeueReusableCellWithIdentifier(cellID)
+        if cell == nil{
+            // La creo a pelo
+            cell = UITableViewCell(style: .Subtitle, reuseIdentifier: cellID)
+        }
+        
+        // Obtener el personaje
+        let character = model![indexPath.row, inAffiliation: StarWarsAffiliation.byRawValue(indexPath.section)]
 
         // Configure the cell...
-
-        return cell
+        cell?.textLabel?.text = character?.name
+        cell?.detailTextLabel?.text = character?.alias
+        cell?.imageView?.image = character?.photo
+        
+        return cell!
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -118,14 +137,31 @@ class StarWarsUniverseViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+        
+        return true
+    }
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+        // Averiguar si el segue en cuestión es el correcto
+        if segue.identifier == "showCharacter" {
+            
+            // Este es el mío
+            // Get the new view controller using segue.destinationViewController.
+            let destVC = segue.destinationViewController as? CharacterViewController
+            
+            // Pass the selected object to the new view controller.
+            let ip = self.tableView.indexPathForSelectedRow
+            let character = model![(ip?.row)!, inAffiliation: StarWarsAffiliation.byRawValue((ip?.section)!)]
+            destVC?.model = character
+        }
+        
+        
+        
+            }
+    
+    
 }

@@ -8,13 +8,13 @@
 
 import Foundation
 
-enum StarWarsAffiliation{
+enum StarWarsAffiliation:Int{
     
-    case GalacticEmpire
-    case RebelAlliance
-    case JabbaCriminalEmpire
-    case FirstOrder
-    case Unknown
+    case GalacticEmpire = 0
+    case RebelAlliance = 1
+    case JabbaCriminalEmpire = 2
+    case FirstOrder = 3
+    case Unknown = 4
     
     
     static func cases() -> [StarWarsAffiliation]{
@@ -37,7 +37,7 @@ enum StarWarsAffiliation{
             name = "Rebel Alliance"
             
         case .JabbaCriminalEmpire:
-            name = "Jabba Criminal Empire"
+            name = "Jabba's Criminal Empire"
             
         case .FirstOrder:
             name = "First Order"
@@ -48,6 +48,34 @@ enum StarWarsAffiliation{
         
         return name
 
+    }
+
+    
+    static func byRawValue(raw: Int) ->StarWarsAffiliation{
+        
+        let aff : StarWarsAffiliation
+        
+        switch raw{
+        case StarWarsAffiliation.GalacticEmpire.rawValue:
+            aff = .GalacticEmpire
+            
+        case StarWarsAffiliation.RebelAlliance.rawValue:
+            aff = .RebelAlliance
+            
+        case StarWarsAffiliation.JabbaCriminalEmpire.rawValue:
+            aff = .JabbaCriminalEmpire
+            
+        case StarWarsAffiliation.FirstOrder.rawValue:
+            aff = .FirstOrder
+            
+        case StarWarsAffiliation.Unknown.rawValue:
+            aff = .Unknown
+            
+        default:
+            aff = .Unknown
+        }
+        
+        return aff
     }
     
     static func byName(name: String) ->StarWarsAffiliation{
@@ -72,5 +100,6 @@ enum StarWarsAffiliation{
         }
         
         return aff
+        
     }
 }

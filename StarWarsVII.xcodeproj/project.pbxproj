@@ -50,6 +50,7 @@
 		68F7886D1BFE903000A51030 /* vader.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 68F7884F1BFE903000A51030 /* vader.jpg */; };
 		68F7886E1BFE903000A51030 /* yoda.caf in Resources */ = {isa = PBXBuildFile; fileRef = 68F788501BFE903000A51030 /* yoda.caf */; };
 		68F7886F1BFE903000A51030 /* yoda.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 68F788511BFE903000A51030 /* yoda.jpg */; };
+		68FED95B1C0CFA57005701BA /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FED95A1C0CFA57005701BA /* CharacterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +113,7 @@
 		68F7884F1BFE903000A51030 /* vader.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = vader.jpg; sourceTree = "<group>"; };
 		68F788501BFE903000A51030 /* yoda.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = yoda.caf; sourceTree = "<group>"; };
 		68F788511BFE903000A51030 /* yoda.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yoda.jpg; sourceTree = "<group>"; };
+		68FED95A1C0CFA57005701BA /* CharacterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				680D81A21C07C8FB00049BF2 /* StarWarsUniverseViewController.swift */,
+				68FED95A1C0CFA57005701BA /* CharacterViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -396,6 +399,7 @@
 				68F7880C1BFE5D2700A51030 /* ViewController.swift in Sources */,
 				68F7882C1BFE605B00A51030 /* StarWarsCharacter.swift in Sources */,
 				680D81A31C07C8FB00049BF2 /* StarWarsUniverseViewController.swift in Sources */,
+				68FED95B1C0CFA57005701BA /* CharacterViewController.swift in Sources */,
 				68F788301BFE7C5300A51030 /* Affiliations.swift in Sources */,
 				68F788321BFE88A300A51030 /* ForceSensitive.swift in Sources */,
 				68F7880A1BFE5D2700A51030 /* AppDelegate.swift in Sources */,
