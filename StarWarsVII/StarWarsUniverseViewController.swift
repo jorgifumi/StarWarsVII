@@ -35,14 +35,12 @@ class StarWarsUniverseViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // Devuelve el número de secciones
-        print(model.countAffiliations)
         return model.countAffiliations
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Recibe una tabla y el número de sección y devuelve el número de filas en esa sección
         let aff = StarWarsAffiliation.byName(model.affiliationName(section))
-        print("rows: \(model.countCharacters(aff))")
         return model.countCharacters(aff)
     }
 

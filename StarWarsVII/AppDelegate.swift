@@ -20,16 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         // Arranco la App a manubrio
-        // Preparo el modelo
-//        do{
-//            if let url = NSBundle.mainBundle().URLForResource("regularCharacters.json"),
-//                data = NSData(contentsOfURL: url),
-//                jsons = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments) as? JSONArray{
-//                    model = StarWarsUniverse(arrayOfStrictSWCharacters: decode(starWarsCharacters: jsons))
-//            }
-//        }catch{
-//            fatalError("El modelo se fue al carajo")
-//        }
         
         // Crear la interfaz gráfica (El Storyboard)
         sb = UIStoryboard(name: "EpisodeVII", bundle: nil)

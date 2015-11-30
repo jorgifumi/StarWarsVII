@@ -127,18 +127,19 @@ func decode(forceSensitive json: JSONDictionary) throws -> StrictForceSensitive{
 func decode(starWarsCharacters json: JSONArray) -> [StrictStarWarsCharacter]{
     
     // Inicializamos
-    var result = Array<StrictStarWarsCharacter>()
+    
     
     do{
         // Recorremos todos los personajes y los vamos guardando en el array
-        for each in json {
-            result.append(try decode(starWarsCharacter: each))
-        }
+        return try json.map({try decode(starWarsCharacter: $0)})
+//        for each in json {
+//            result.append(try decode(starWarsCharacter: each))
+//        }
     }catch{
         fatalError("Ahora sí que la has cagado")
     }
     // Devuelvo el array
-    return result
+    //return result
 }
 
 // Función que extrae el JSON de personajes mindunguis y devuelve un Array de su representación estricta
@@ -177,14 +178,15 @@ extension StarWarsUniverse{
     // Init de conveniencia
     
     convenience init(arrayOfStrictSWCharacters cs: [StrictStarWarsCharacter]){
+        let chars = cs.map({StarWarsCharacter(strictStarWarsCharacter: $0)})
         // Patearse el array
-        var chars = [StarWarsCharacter]()
-        for each in cs{
-            // Pa cada uno que encuentre lo transformo en un personaje
-            let c = StarWarsCharacter(strictStarWarsCharacter: each)
-            // Lo encasqueto en un array
-            chars.append(c)
-        }
+//        var chars = [StarWarsCharacter]()
+//        for each in cs{
+//            // Pa cada uno que encuentre lo transformo en un personaje
+//            let c = StarWarsCharacter(strictStarWarsCharacter: each)
+//            // Lo encasqueto en un array
+//            chars.append(c)
+//        }
         // Le paso el array y el marron a mi init designado (Paco)
         self.init(arrayOfCharacters: chars)
     }
