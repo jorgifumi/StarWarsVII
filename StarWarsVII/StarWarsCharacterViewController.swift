@@ -10,16 +10,30 @@ import UIKit
 
 class StarWarsCharacterViewController: UIViewController {
     
+    @IBOutlet weak var photo: UIImageView?
+    @IBOutlet weak var toolBar: UIToolbar?
     
-    
-    
-//    convenience init (char: StarWarsCharacter) {
-//        var model : StarWarsCharacter = char
-//    }
+    var model : StarWarsCharacter?{
+        willSet{
+            updateUI()
+        }
+    }
 
+    func updateUI(){
+        // Poner el nombre como title
+        self.title = model?.alias
+        
+        // Mostar la imagen
+        if let photoR = model?.photo {
+            self.photo?.image = photoR
+        }
+        
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        updateUI()
         // Do any additional setup after loading the view.
     }
 
@@ -28,7 +42,7 @@ class StarWarsCharacterViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
     // MARK: - Navigation
 

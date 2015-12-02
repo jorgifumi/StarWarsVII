@@ -17,7 +17,7 @@ class StarWarsUniverseViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        self.title = "StarWars VII"
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -46,17 +46,22 @@ class StarWarsUniverseViewController: UITableViewController {
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCellWithIdentifier("StarWarsCharacterId", forIndexPath: indexPath)
         
+        let character = model[indexPath.row, inAffiliation: StarWarsAffiliation.byName(model.affiliationName(indexPath.section))]
+        
         // Configure the cell...
-        if let alias = model[indexPath.row, inAffiliation: StarWarsAffiliation.byName(model.affiliationName(indexPath.section))]?.alias {
+        if let alias = character?.alias {
             cell.textLabel?.text = alias
-            cell.detailTextLabel?.text = model[indexPath.row, inAffiliation: StarWarsAffiliation.byName(model.affiliationName(indexPath.section))]?.name
+            cell.detailTextLabel?.text = character?.name
             
 
         }else{
-            cell.textLabel?.text = model[indexPath.row, inAffiliation: StarWarsAffiliation.byName(model.affiliationName(indexPath.section))]?.name
+            cell.textLabel?.text = character?.name
         }
+        
+        cell.imageView?.image = character?.photo
         
         return cell
     }
@@ -65,10 +70,6 @@ class StarWarsUniverseViewController: UITableViewController {
         return model.affiliationName(section)
     }
 
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-        self.performSegueWithIdentifier("DetailSWCharacter", sender: model[indexPath.row, inAffiliation: StarWarsAffiliation.byName(model.affiliationName(indexPath.section))])
-    }
     
     /*
     // Override to support conditional editing of the table view.
@@ -108,22 +109,26 @@ class StarWarsUniverseViewController: UITableViewController {
     
     // MARK: - Navigation
 
-    /*
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+        
+        return true
+    }
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "DetailSWCharacter"){
-        // Get the new view controller using segue.destinationViewController.
-            //var model = sender as? StarWarsCharacter
+            // Get the new view controller using segue.destinationViewController.
+            let detailVC = segue.destinationViewController as? StarWarsCharacterViewController
             
-        // Pass the selected object to the new view controller.
-            //var detailVC : StarWarsCharacterViewController = (segue.destinationViewController as? StarWarsCharacterViewController)!
-            //detailVC.model = model
+            // Pass the selected object to the new view controller.
+            if let ip = self.tableView.indexPathForSelectedRow {
+                let character = model[ip.row, inAffiliation: StarWarsAffiliation.byName(model.affiliationName(ip.section))]
+                detailVC!.model = character
+            }
+            
+            
         }
     }
-    */
-        
-    // MARK: - Delegate
-    
-    
+ 
 
 }
