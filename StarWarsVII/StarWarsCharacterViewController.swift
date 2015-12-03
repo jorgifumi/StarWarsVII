@@ -7,11 +7,15 @@
 //
 
 import UIKit
+import AVFoundation
 
 class StarWarsCharacterViewController: UIViewController {
     
     @IBOutlet weak var photo: UIImageView?
-    @IBOutlet weak var toolBar: UIToolbar?
+    
+    @IBOutlet weak var playAudio: UIBarButtonItem?
+    
+    
     
     var model : StarWarsCharacter?{
         willSet{
@@ -24,17 +28,36 @@ class StarWarsCharacterViewController: UIViewController {
         self.title = model?.alias
         
         // Mostar la imagen
-        if let photoR = model?.photo {
-            self.photo?.image = photoR
+        if let photo = model?.photo {
+            self.photo?.image = photo
         }
         
-        
+        // Asignar acción al botón
+        playAudio?.action = "playSound"
     }
+    
+    func playSound(){
+        
+        if let data = model?.soundData {
+            do{
+                let audioPlayer: AVAudioPlayer = try AVAudioPlayer(data: data)
+                audioPlayer.prepareToPlay()
+                audioPlayer.play()
+            }catch{
+                print("Error al crear el reproductor de audio")
+            }
+            
+        }else{
+            print("No hay datos para reproducir")
+        }
+    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateUI()
         // Do any additional setup after loading the view.
+        updateUI()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,14 +66,20 @@ class StarWarsCharacterViewController: UIViewController {
     }
     
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+        if (segue.identifier == "WikiView"){
+            // Get the new view controller using segue.destinationViewController.
+            let webVC = segue.destinationViewController as? SWWebViewController
+            
+            // Pass the selected object to the new view controller.
+            webVC!.url = model?.url
+            
+        }
+    
 
+    }
 }

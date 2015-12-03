@@ -70,57 +70,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5IY-Vo-3aq">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zW8-Jq-q02">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
-                                        <animations/>
-                                    </imageView>
-                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T8i-KW-tyQ">
-                                        <rect key="frame" x="0.0" y="556" width="600" height="44"/>
-                                        <animations/>
-                                        <items>
-                                            <barButtonItem systemItem="play" id="HlA-sL-dJU">
-                                                <connections>
-                                                    <segue destination="iPg-4t-k74" kind="show" id="q5H-2Y-EgS"/>
-                                                </connections>
-                                            </barButtonItem>
-                                            <barButtonItem title="Wiki" id="0n8-qk-I2T">
-                                                <connections>
-                                                    <segue destination="giH-Wz-To3" kind="show" id="Ph6-oN-ojR"/>
-                                                </connections>
-                                            </barButtonItem>
-                                        </items>
-                                    </toolbar>
-                                </subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zW8-Jq-q02">
+                                <rect key="frame" x="0.0" y="64" width="600" height="492"/>
                                 <animations/>
-                            </stackView>
+                            </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T8i-KW-tyQ">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="r7D-te-46o"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem systemItem="play" id="HlA-sL-dJU"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="VNV-1G-SfP"/>
+                                    <barButtonItem title="Wiki" id="0n8-qk-I2T">
+                                        <connections>
+                                            <segue destination="giH-Wz-To3" kind="show" identifier="WikiView" id="Ph6-oN-ojR"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zW8-Jq-q02" firstAttribute="leading" secondItem="ZvH-ww-JrY" secondAttribute="leading" id="2vu-8H-yeY"/>
+                            <constraint firstItem="T8i-KW-tyQ" firstAttribute="top" secondItem="zW8-Jq-q02" secondAttribute="bottom" id="BRl-jg-4Dm"/>
+                            <constraint firstItem="g1n-C1-oRg" firstAttribute="top" secondItem="T8i-KW-tyQ" secondAttribute="bottom" id="IIg-Nw-XKN"/>
+                            <constraint firstItem="T8i-KW-tyQ" firstAttribute="top" secondItem="zW8-Jq-q02" secondAttribute="bottom" id="QNX-Hw-fvY"/>
+                            <constraint firstItem="zW8-Jq-q02" firstAttribute="top" secondItem="ZvH-ww-JrY" secondAttribute="top" constant="64" id="eXy-EC-DD5"/>
+                            <constraint firstAttribute="trailing" secondItem="zW8-Jq-q02" secondAttribute="trailing" id="iBV-5n-LEX"/>
+                            <constraint firstAttribute="trailing" secondItem="T8i-KW-tyQ" secondAttribute="trailing" id="p9c-sc-N7U"/>
+                            <constraint firstItem="T8i-KW-tyQ" firstAttribute="leading" secondItem="ZvH-ww-JrY" secondAttribute="leading" id="paL-vC-anN"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="photo" destination="zW8-Jq-q02" id="Qwr-UN-TtX"/>
-                        <outlet property="toolBar" destination="T8i-KW-tyQ" id="6Yp-HS-wNL"/>
+                        <outlet property="playAudio" destination="HlA-sL-dJU" id="cNR-3A-rXt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6CY-56-I6B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1663" y="514"/>
         </scene>
-        <!--AV Player View Controller-->
-        <scene sceneID="3Tu-rx-M2w">
-            <objects>
-                <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="iPg-4t-k74" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2Ym-s2-AK2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1663" y="1209"/>
-        </scene>
-        <!--View Controller-->
+        <!--Web View Controller-->
         <scene sceneID="apv-U2-BGF">
             <objects>
-                <viewController id="giH-Wz-To3" sceneMemberID="viewController">
+                <viewController id="giH-Wz-To3" customClass="SWWebViewController" customModule="StarWarsVII" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="86e-QL-WCC"/>
                         <viewControllerLayoutGuide type="bottom" id="feF-VN-ayC"/>
@@ -129,7 +125,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Y8-Et-2Bv">
+                            <webView contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Y8-Et-2Bv">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
@@ -137,7 +133,16 @@
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="feF-VN-ayC" firstAttribute="top" secondItem="6Y8-Et-2Bv" secondAttribute="bottom" id="088-Xv-5hx"/>
+                            <constraint firstItem="6Y8-Et-2Bv" firstAttribute="top" secondItem="kXK-CZ-uUT" secondAttribute="top" id="CGB-2i-y9M"/>
+                            <constraint firstAttribute="trailing" secondItem="6Y8-Et-2Bv" secondAttribute="trailing" id="beX-aI-fJI"/>
+                            <constraint firstItem="6Y8-Et-2Bv" firstAttribute="leading" secondItem="kXK-CZ-uUT" secondAttribute="leading" id="kdF-yF-Bja"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="wikiWeb" destination="6Y8-Et-2Bv" id="lzy-0S-w4e"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NZR-fD-Z0O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
