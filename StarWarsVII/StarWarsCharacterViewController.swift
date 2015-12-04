@@ -19,7 +19,7 @@ class StarWarsCharacterViewController: UIViewController {
     }
     
     
-    
+    var audioPlayer: AVAudioPlayer?
     
     var model : StarWarsCharacter?{
         willSet{
@@ -44,9 +44,9 @@ class StarWarsCharacterViewController: UIViewController {
         
         if let data = model?.soundData {
             do{
-                let audioPlayer: AVAudioPlayer = try AVAudioPlayer(data: data)
-                audioPlayer.prepareToPlay()
-                audioPlayer.play()
+                audioPlayer = try AVAudioPlayer(data: data)
+                audioPlayer!.prepareToPlay()
+                audioPlayer!.play()
             }catch{
                 print("Error al crear el reproductor de audio")
             }
