@@ -13,7 +13,11 @@ class StarWarsCharacterViewController: UIViewController {
     
     @IBOutlet weak var photo: UIImageView?
     
-    @IBOutlet weak var playAudio: UIBarButtonItem?
+    @IBAction func playAudio(sender: AnyObject) {
+        
+        playSound()
+    }
+    
     
     
     
@@ -33,7 +37,7 @@ class StarWarsCharacterViewController: UIViewController {
         }
         
         // Asignar acción al botón
-        playAudio?.action = "playSound"
+       
     }
     
     func playSound(){

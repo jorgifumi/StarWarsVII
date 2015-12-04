@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Root View Controller-->
@@ -70,43 +71,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zW8-Jq-q02">
-                                <rect key="frame" x="0.0" y="64" width="600" height="492"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Act-RW-qoW">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="z0g-nT-MV6">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="492"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zW8-Jq-q02">
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="492"/>
+                                                <animations/>
+                                            </imageView>
+                                        </subviews>
+                                        <animations/>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="JRB-P8-ijE">
+                                        <rect key="frame" x="0.0" y="492" width="600" height="44"/>
+                                        <subviews>
+                                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T8i-KW-tyQ">
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="r7D-te-46o"/>
+                                                </constraints>
+                                                <items>
+                                                    <barButtonItem systemItem="play" id="HlA-sL-dJU">
+                                                        <connections>
+                                                            <action selector="playAudio:" destination="K2p-zs-P58" id="5s5-BQ-ltD"/>
+                                                        </connections>
+                                                    </barButtonItem>
+                                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="VNV-1G-SfP"/>
+                                                    <barButtonItem title="Wiki" id="0n8-qk-I2T">
+                                                        <connections>
+                                                            <segue destination="giH-Wz-To3" kind="show" identifier="WikiView" id="Ph6-oN-ojR"/>
+                                                        </connections>
+                                                    </barButtonItem>
+                                                </items>
+                                            </toolbar>
+                                        </subviews>
+                                        <animations/>
+                                    </stackView>
+                                </subviews>
                                 <animations/>
-                            </imageView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T8i-KW-tyQ">
-                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="r7D-te-46o"/>
-                                </constraints>
-                                <items>
-                                    <barButtonItem systemItem="play" id="HlA-sL-dJU"/>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="VNV-1G-SfP"/>
-                                    <barButtonItem title="Wiki" id="0n8-qk-I2T">
-                                        <connections>
-                                            <segue destination="giH-Wz-To3" kind="show" identifier="WikiView" id="Ph6-oN-ojR"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
+                            </stackView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="zW8-Jq-q02" firstAttribute="leading" secondItem="ZvH-ww-JrY" secondAttribute="leading" id="2vu-8H-yeY"/>
-                            <constraint firstItem="T8i-KW-tyQ" firstAttribute="top" secondItem="zW8-Jq-q02" secondAttribute="bottom" id="BRl-jg-4Dm"/>
-                            <constraint firstItem="g1n-C1-oRg" firstAttribute="top" secondItem="T8i-KW-tyQ" secondAttribute="bottom" id="IIg-Nw-XKN"/>
-                            <constraint firstItem="T8i-KW-tyQ" firstAttribute="top" secondItem="zW8-Jq-q02" secondAttribute="bottom" id="QNX-Hw-fvY"/>
-                            <constraint firstItem="zW8-Jq-q02" firstAttribute="top" secondItem="ZvH-ww-JrY" secondAttribute="top" constant="64" id="eXy-EC-DD5"/>
-                            <constraint firstAttribute="trailing" secondItem="zW8-Jq-q02" secondAttribute="trailing" id="iBV-5n-LEX"/>
-                            <constraint firstAttribute="trailing" secondItem="T8i-KW-tyQ" secondAttribute="trailing" id="p9c-sc-N7U"/>
-                            <constraint firstItem="T8i-KW-tyQ" firstAttribute="leading" secondItem="ZvH-ww-JrY" secondAttribute="leading" id="paL-vC-anN"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Act-RW-qoW" secondAttribute="leading" constant="20" id="OEy-E5-met"/>
+                            <constraint firstItem="Act-RW-qoW" firstAttribute="top" secondItem="NpK-6U-bf4" secondAttribute="bottom" id="jQM-sm-z1Y"/>
+                            <constraint firstItem="Act-RW-qoW" firstAttribute="trailing" secondItem="ZvH-ww-JrY" secondAttribute="trailingMargin" constant="20" id="oQb-Ll-sYH"/>
+                            <constraint firstItem="g1n-C1-oRg" firstAttribute="top" secondItem="Act-RW-qoW" secondAttribute="bottom" id="xII-mo-4x1"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="photo" destination="zW8-Jq-q02" id="Qwr-UN-TtX"/>
-                        <outlet property="playAudio" destination="HlA-sL-dJU" id="cNR-3A-rXt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6CY-56-I6B" userLabel="First Responder" sceneMemberID="firstResponder"/>
