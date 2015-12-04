@@ -142,6 +142,17 @@ func decode(starWarsCharacters json: JSONArray) -> [StrictStarWarsCharacter]{
     //return result
 }
 
+func decode(forceSensitives json: JSONArray) -> [StrictForceSensitive]{
+    
+    do{
+        // Recorremos todos los personajes y los vamos guardando en el array
+        return try json.map({try decode(forceSensitive: $0)})
+   
+    }catch{
+        fatalError("Ahora sí que la has cagado")
+    }
+}
+
 // Función que extrae el JSON de personajes mindunguis y devuelve un Array de su representación estricta
 func decodeJSON() -> [StrictStarWarsCharacter]{
     // Preparo el modelo
@@ -157,6 +168,23 @@ func decodeJSON() -> [StrictStarWarsCharacter]{
     }
     return decoded
 }
+
+// Función que extrae el JSON de personajes sensibles a la fuerza y devuelve un Array de su representación estricta
+func decodeJSON() -> [StrictForceSensitive]{
+    // Preparo el modelo
+    var decoded = [StrictForceSensitive]()
+    do{
+        if let url = NSBundle.mainBundle().URLForResource("forceSensitives.json"),
+            data = NSData(contentsOfURL: url),
+            jsons = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments) as? JSONArray{
+                decoded = decode(forceSensitives: jsons)
+        }
+    }catch{
+        fatalError("El modelo se fue al carajo")
+    }
+    return decoded
+}
+
 
 //MARK: - Initialization
 

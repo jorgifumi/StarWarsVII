@@ -48,8 +48,6 @@ class StarWarsUniverse{
                 total += countCharacters(affiliation)
             }
             return total
-            
-            
         }
     }
     
@@ -69,7 +67,6 @@ class StarWarsUniverse{
             return chars.count
         }
         return 0
-        
     }
     
     // El nombre de una afiliacion
