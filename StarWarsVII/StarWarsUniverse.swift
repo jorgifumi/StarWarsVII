@@ -15,16 +15,16 @@ class StarWarsUniverse{
     
     // Guardo los personajes en un diccionario cuyas claves son las afiliaciones y los valores son arrays de StarWarsCharacters
     
-    private var characters : [StarWarsAffiliation:[StarWarsCharacter]]
+    private var characters : [StarWarsAffiliation:[ForceSensitive]]
 
     //MARK: - Initializacion
     
-    init(arrayOfCharacters: [StarWarsCharacter]){
+    init(arrayOfCharacters: [ForceSensitive]){
         
         // Inicializamos el diccionario vacío
-        characters = Dictionary<StarWarsAffiliation, Array<StarWarsCharacter>>()
+        characters = Dictionary<StarWarsAffiliation, Array<ForceSensitive>>()
         for each in StarWarsAffiliation.cases(){
-            characters[each] = Array<StarWarsCharacter>()
+            characters[each] = Array<ForceSensitive>()
         }
         // Patearse los personajes, y según su afiliación, los metemos en un sitio o en otro
         for character in arrayOfCharacters{
@@ -84,7 +84,7 @@ class StarWarsUniverse{
     }
     
     // El personaje n de la afiliacion m
-    subscript(idx: Int, inAffiliation aff: StarWarsAffiliation) -> StarWarsCharacter?{
+    subscript(idx: Int, inAffiliation aff: StarWarsAffiliation) -> ForceSensitive?{
         // Obtener el array de la afiliación
         // el personaje en la posición
         get{
