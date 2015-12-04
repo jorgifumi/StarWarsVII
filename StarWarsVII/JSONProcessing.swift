@@ -142,6 +142,17 @@ func decode(starWarsCharacters json: JSONArray) -> [StrictStarWarsCharacter]{
     //return result
 }
 
+func decode(forceSensitives json: JSONArray) -> [StrictForceSensitive]{
+    
+    do{
+        // Recorremos todos los personajes y los vamos guardando en el array
+        return try json.map({try decode(forceSensitive: $0)})
+   
+    }catch{
+        fatalError("Ahora sí que la has cagado")
+    }
+}
+
 // Función que extrae el JSON de personajes mindunguis y devuelve un Array de su representación estricta
 func decodeJSON() -> [StrictStarWarsCharacter]{
     // Preparo el modelo
@@ -157,6 +168,28 @@ func decodeJSON() -> [StrictStarWarsCharacter]{
     }
     return decoded
 }
+
+// Función que extrae el JSON de personajes sensibles a la fuerza y devuelve un Array de su representación estricta
+func decodeJSON() -> [StrictForceSensitive]{
+    // Preparo el modelo
+    var decoded = [StrictForceSensitive]()
+    do{
+        if let url1 = NSBundle.mainBundle().URLForResource("forceSensitives.json"),
+            url2 = NSBundle.mainBundle().URLForResource("regularCharacters.json"),
+            data1 = NSData(contentsOfURL: url1),
+            data2 = NSData(contentsOfURL: url2),
+            jsons1 = try NSJSONSerialization.JSONObjectWithData(data1, options: .AllowFragments) as? JSONArray,
+            jsons2 = try NSJSONSerialization.JSONObjectWithData(data2, options: .AllowFragments) as? JSONArray{
+                decoded = decode(forceSensitives: jsons1)
+                let decoded2 = decode(starWarsCharacters: jsons2)
+                decoded2.map({decoded.append(StrictForceSensitive(character: $0, midichlorians: 0))})
+            }
+    }catch{
+        fatalError("El modelo se fue al carajo")
+    }
+    return decoded
+}
+
 
 //MARK: - Initialization
 
@@ -174,11 +207,26 @@ extension StarWarsCharacter{
     }
 }
 
+extension ForceSensitive{
+    // Un init que acepta los parámetros empaquetados en un StrictForceSensitive
+    
+    convenience init(strictForceSensitive c: StrictForceSensitive){
+        self.init(firstName: c.character.firstName,
+            lastName: c.character.lastName,
+            alias: c.character.alias,
+            soundData: c.character.soundData,
+            photo: c.character.photo,
+            url: c.character.url,
+            affiliation: c.character.affiliation,
+            midichlorians: c.midichlorians)
+    }
+}
+
 extension StarWarsUniverse{
     // Init de conveniencia
     
-    convenience init(arrayOfStrictSWCharacters cs: [StrictStarWarsCharacter]){
-        let chars = cs.map({StarWarsCharacter(strictStarWarsCharacter: $0)})
+    convenience init(arrayOfStrictSWCharacters cs: [StrictForceSensitive]){
+        let chars = cs.map({ForceSensitive(strictForceSensitive: $0)})
         // Patearse el array
 //        var chars = [StarWarsCharacter]()
 //        for each in cs{

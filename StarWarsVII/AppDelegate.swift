@@ -55,47 +55,47 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-    func tddPaPobres(){
-        
-        
-        if let image = UIImage(named: "vader.jpg"),
-            soundFileURL = NSBundle.mainBundle().URLForResource("vader", withExtension: "caf"),
-        soundFile = NSData(contentsOfURL: soundFileURL),
-        wikiURL = NSURL(string: "https://en.wikipedia.org/wiki/Darth_Vader")
-        {
-        
-            let vader = ForceSensitive(sithWithFirstName: "Anakin", lastName: "SkyWalker", alias: "Darth Vader", soundData: soundFile, photo: image, url: wikiURL, midichlorians: 15_000)
-            print(vader)
-        }
-        
-        // Probar parseado de JSON e inicialización de objetos del modelo
-        
-        do{
-            if let url = NSBundle.mainBundle().URLForResource("regularCharacters.json"),
-                data = NSData(contentsOfURL: url),
-                characters = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments) as? JSONArray{
-                    
-                    // Ver un JSONObjet que este dentro del JSONArray
-                    let jabbaJSON = characters[4]
-                    do{
-                        let strictJabba = try decode(starWarsCharacter: jabbaJSON)
-                        let jabba = StarWarsCharacter(strictStarWarsCharacter: strictJabba)
-                        print("El vestido más bonito de Leia, se lo regaló \(jabba)")
-
-                    }catch{
-                        print("La cagamos al extraer a Jabba")
-                    }
-                    
-                    // Crear mi universo de Star Wars a partir del array que ya tengo
-                    let strictChars = decode(starWarsCharacters: characters)
-                    
-                    let u = StarWarsUniverse(arrayOfStrictSWCharacters: strictChars)
-                    print(u)
-                }
-        }catch{
-            print("La cagamosal parsear el JSON")
-        }
-        
-    }
+//    func tddPaPobres(){
+//        
+//        
+//        if let image = UIImage(named: "vader.jpg"),
+//            soundFileURL = NSBundle.mainBundle().URLForResource("vader", withExtension: "caf"),
+//        soundFile = NSData(contentsOfURL: soundFileURL),
+//        wikiURL = NSURL(string: "https://en.wikipedia.org/wiki/Darth_Vader")
+//        {
+//        
+//            let vader = ForceSensitive(sithWithFirstName: "Anakin", lastName: "SkyWalker", alias: "Darth Vader", soundData: soundFile, photo: image, url: wikiURL, midichlorians: 15_000)
+//            print(vader)
+//        }
+//        
+//        // Probar parseado de JSON e inicialización de objetos del modelo
+//        
+//        do{
+//            if let url = NSBundle.mainBundle().URLForResource("regularCharacters.json"),
+//                data = NSData(contentsOfURL: url),
+//                characters = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments) as? JSONArray{
+//                    
+//                    // Ver un JSONObjet que este dentro del JSONArray
+//                    let jabbaJSON = characters[4]
+//                    do{
+//                        let strictJabba = try decode(starWarsCharacter: jabbaJSON)
+//                        let jabba = StarWarsCharacter(strictStarWarsCharacter: strictJabba)
+//                        print("El vestido más bonito de Leia, se lo regaló \(jabba)")
+//
+//                    }catch{
+//                        print("La cagamos al extraer a Jabba")
+//                    }
+//                    
+//                    // Crear mi universo de Star Wars a partir del array que ya tengo
+//                    let strictChars = decode(starWarsCharacters: characters)
+//                    
+//                    let u = StarWarsUniverse(arrayOfStrictSWCharacters: strictChars)
+//                    print(u)
+//                }
+//        }catch{
+//            print("La cagamosal parsear el JSON")
+//        }
+//        
+//    }
 
 }
