@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		680D81A11C07A54300049BF2 /* EpisodeVII.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 680D81A01C07A54300049BF2 /* EpisodeVII.storyboard */; };
+		680D81A31C07C8FB00049BF2 /* StarWarsUniverseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680D81A21C07C8FB00049BF2 /* StarWarsUniverseViewController.swift */; };
+		680D81A51C0BBB6700049BF2 /* StarWarsCharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680D81A41C0BBB6700049BF2 /* StarWarsCharacterViewController.swift */; };
+		6812BD951C0FAEB3007EA651 /* SWWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6812BD941C0FAEB3007EA651 /* SWWebViewController.swift */; };
 		689104F41BFFD26800F8A22F /* JSONProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689104F31BFFD26800F8A22F /* JSONProcessing.swift */; };
 		689104F71BFFDDEC00F8A22F /* FoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689104F61BFFDDEC00F8A22F /* FoundationExtensions.swift */; };
 		689104F91C00A21300F8A22F /* StarWarsUniverse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689104F81C00A21300F8A22F /* StarWarsUniverse.swift */; };
 		68F7880A1BFE5D2700A51030 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F788091BFE5D2700A51030 /* AppDelegate.swift */; };
 		68F7880C1BFE5D2700A51030 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F7880B1BFE5D2700A51030 /* ViewController.swift */; };
-		68F7880F1BFE5D2700A51030 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68F7880D1BFE5D2700A51030 /* Main.storyboard */; };
 		68F788111BFE5D2700A51030 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68F788101BFE5D2700A51030 /* Assets.xcassets */; };
 		68F788141BFE5D2700A51030 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68F788121BFE5D2700A51030 /* LaunchScreen.storyboard */; };
 		68F7881F1BFE5D2700A51030 /* StarWarsVIITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F7881E1BFE5D2700A51030 /* StarWarsVIITests.swift */; };
@@ -62,13 +65,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		680D814E1C06146B00049BF2 /* deberes.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = deberes.md; sourceTree = "<group>"; };
+		680D81A01C07A54300049BF2 /* EpisodeVII.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EpisodeVII.storyboard; sourceTree = "<group>"; };
+		680D81A21C07C8FB00049BF2 /* StarWarsUniverseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarWarsUniverseViewController.swift; sourceTree = "<group>"; };
+		680D81A41C0BBB6700049BF2 /* StarWarsCharacterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarWarsCharacterViewController.swift; sourceTree = "<group>"; };
+		6812BD941C0FAEB3007EA651 /* SWWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWWebViewController.swift; sourceTree = "<group>"; };
 		689104F31BFFD26800F8A22F /* JSONProcessing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONProcessing.swift; sourceTree = "<group>"; };
 		689104F61BFFDDEC00F8A22F /* FoundationExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundationExtensions.swift; sourceTree = "<group>"; };
 		689104F81C00A21300F8A22F /* StarWarsUniverse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarWarsUniverse.swift; sourceTree = "<group>"; };
 		68F788061BFE5D2700A51030 /* StarWarsVII.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarWarsVII.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68F788091BFE5D2700A51030 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		68F7880B1BFE5D2700A51030 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		68F7880E1BFE5D2700A51030 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		68F788101BFE5D2700A51030 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		68F788131BFE5D2700A51030 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		68F788151BFE5D2700A51030 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -129,6 +136,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		680D819C1C07A47600049BF2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				680D81A21C07C8FB00049BF2 /* StarWarsUniverseViewController.swift */,
+				680D81A41C0BBB6700049BF2 /* StarWarsCharacterViewController.swift */,
+				6812BD941C0FAEB3007EA651 /* SWWebViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		680D819F1C07A51E00049BF2 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				68F788121BFE5D2700A51030 /* LaunchScreen.storyboard */,
+				680D81A01C07A54300049BF2 /* EpisodeVII.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
 		689104F51BFFDDA800F8A22F /* Framework */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +186,7 @@
 			children = (
 				689104F51BFFDDA800F8A22F /* Framework */,
 				68F788291BFE5DEF00A51030 /* App */,
+				680D814E1C06146B00049BF2 /* deberes.md */,
 			);
 			path = StarWarsVII;
 			sourceTree = "<group>";
@@ -176,14 +203,14 @@
 		68F788291BFE5DEF00A51030 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				680D819F1C07A51E00049BF2 /* Storyboards */,
+				680D819C1C07A47600049BF2 /* Controllers */,
 				68F788331BFE900F00A51030 /* Resources */,
 				68F7882E1BFE65A800A51030 /* Misc.playground */,
 				68F7882A1BFE601400A51030 /* Model */,
 				68F788091BFE5D2700A51030 /* AppDelegate.swift */,
 				68F7880B1BFE5D2700A51030 /* ViewController.swift */,
-				68F7880D1BFE5D2700A51030 /* Main.storyboard */,
 				68F788101BFE5D2700A51030 /* Assets.xcassets */,
-				68F788121BFE5D2700A51030 /* LaunchScreen.storyboard */,
 				68F788151BFE5D2700A51030 /* Info.plist */,
 			);
 			name = App;
@@ -288,6 +315,7 @@
 				TargetAttributes = {
 					68F788051BFE5D2700A51030 = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = R5A66455JB;
 					};
 					68F788191BFE5D2700A51030 = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -345,13 +373,13 @@
 				68F788581BFE903000A51030 /* greedo.jpg in Resources */,
 				68F788671BFE903000A51030 /* r2-d2.caf in Resources */,
 				68F788621BFE903000A51030 /* motti.jpg in Resources */,
+				680D81A11C07A54300049BF2 /* EpisodeVII.storyboard in Resources */,
 				68F788571BFE903000A51030 /* greedo.caf in Resources */,
 				68F788551BFE903000A51030 /* chewie.jpg in Resources */,
 				68F7886C1BFE903000A51030 /* vader.caf in Resources */,
 				68F7885A1BFE903000A51030 /* jabba.caf in Resources */,
 				68F7885F1BFE903000A51030 /* luke.caf in Resources */,
 				68F788111BFE5D2700A51030 /* Assets.xcassets in Resources */,
-				68F7880F1BFE5D2700A51030 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,9 +402,12 @@
 				689104F41BFFD26800F8A22F /* JSONProcessing.swift in Sources */,
 				68F7880C1BFE5D2700A51030 /* ViewController.swift in Sources */,
 				68F7882C1BFE605B00A51030 /* StarWarsCharacter.swift in Sources */,
+				680D81A31C07C8FB00049BF2 /* StarWarsUniverseViewController.swift in Sources */,
 				68F788301BFE7C5300A51030 /* Affiliations.swift in Sources */,
+				6812BD951C0FAEB3007EA651 /* SWWebViewController.swift in Sources */,
 				68F788321BFE88A300A51030 /* ForceSensitive.swift in Sources */,
 				68F7880A1BFE5D2700A51030 /* AppDelegate.swift in Sources */,
+				680D81A51C0BBB6700049BF2 /* StarWarsCharacterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,14 +430,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		68F7880D1BFE5D2700A51030 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				68F7880E1BFE5D2700A51030 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		68F788121BFE5D2700A51030 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -503,10 +526,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = StarWarsVII/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jf.StarWarsVII;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -514,10 +540,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = StarWarsVII/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jf.StarWarsVII;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
